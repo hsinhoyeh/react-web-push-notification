@@ -6,6 +6,7 @@
     "react-scripts": "1.0.3"
   },
   "dependencies": {
+    "material-ui": "^0.18.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
