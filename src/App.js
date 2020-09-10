@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Toggle from 'material-ui/Toggle';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Switch from '@material-ui/core/Switch';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import WebPush from './WebPush'
 import {payloadFromSubscription} from './Utility'
@@ -10,6 +9,9 @@ import {payloadFromSubscription} from './Utility'
 // TODO: chanee this application Server Public Key to yours
 // and also PROTECT your secret key carefully.
 const applicationServerPublicKey = "BADRpdFs_1FjzOZvs0ib7sVKzl9lT8BGUoj3X9-TKQvj0n_ougrIkbMe-yWtbDfhjANBJoseNBRjSk3grHoZ840"
+
+const theme = createMuiTheme({
+});
 
 class App extends Component {
   constructor(props) {
@@ -44,12 +46,13 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
+      <MuiThemeProvider theme={theme}>
         <div >
-          <Toggle
-            label="Enable WebPush Notification"
-            style={{marginBottom: 16}}
-            onToggle={()=> {this.onWebPushToggle()}}
+          <Switch
+            checked={this.state.subscriveUserEnabled}
+            onChange={()=> this.onWebPushToggle()}
+            name="Enable WebPush Notification"
+            inputProps={{ 'aria-label': 'secondary checkbox' }}
           />
           <div> {this.state.subscription.endpoint} </div>
           <WebPush

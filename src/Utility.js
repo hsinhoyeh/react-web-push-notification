@@ -1,5 +1,3 @@
-'use strict';
-
 const payloadFromSubscription = function(subscription) {
   var key = subscription.getKey ? subscription.getKey('p256dh') : '';
   var auth = subscription.getKey ? subscription.getKey('auth') : '';

@@ -20,7 +20,7 @@ class WebPush extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.subscriveUserEnabled  != nextProps.subscriveUserEnabled && nextProps.subscriveUserEnabled) {
+    if (this.props.subscriveUserEnabled  !== nextProps.subscriveUserEnabled && nextProps.subscriveUserEnabled) {
       this.onSubscribeUser()
     }
   }
