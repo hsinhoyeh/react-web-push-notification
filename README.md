@@ -1,3 +1,8 @@
+#### 20221209 *Important
+This project is no longer maintained and there are lots alternative to do web push notification through react.
+****
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
